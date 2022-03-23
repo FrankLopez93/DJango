@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <style>
+        h1{
+            background-color: darkolivegreen;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+        footer{
+            background-color: darkolivegreen;
+            color: white;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pildoras informaticas</h1>
+
+    {% include 'header/navbar.html' %}
+
+    <h2>Curso de programacion con Python y Django</h2>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        Gracias por su visita
+    </footer>
+</body>
+</html>

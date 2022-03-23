@@ -11,10 +11,15 @@
     </style>
 </head>
 <body>
+    <div>
+        {% include 'header/navbar.html' %}
+    </div>
+
     <h1>Documento externo con Django</h1>
     {% comment %}
         SINTAXIS PARA COMENTAR CODIGO SOBRE PLANTILLAS
     {% endcomment %}
+
     {% if nombre_persona == 'Francisco' %}
         <p>Esto lo desarrollo {{nombre_persona}}</p>
     {% else %}

@@ -2,6 +2,7 @@ from django.http import HttpResponse  #always import this library for views
 import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
+from django.shortcuts import render
 
 class Persona(object):
     def __init__(self, nombre, apellido):
@@ -19,15 +20,19 @@ def gretting(request):
     # templt = Template(doc_externo.read())
     # doc_externo.close()
 
-    doc_externo = get_template('myTemplate.html')
+    #doc_externo = get_template('myTemplate.html')
     # ctx = Context({'nombre_persona':p1.nombre,'apellido':p1.apellido,'actual':ahora,'temas':temas})
-    documento = doc_externo.render({'nombre_persona':p1.nombre,
-                                    'apellido':p1.apellido,
-                                    'actual':ahora,
-                                    'temas':temas
-                                })
+    #documento = doc_externo.render({'nombre_persona':p1.nombre,'apellido':p1.apellido,'actual':ahora,'temas':temas})
 
-    return HttpResponse(documento)
+    return render(request, 'myTemplate.html',{'nombre_persona':p1.nombre,'apellido':p1.apellido,'actual':ahora,'temas':temas})
+
+def cursoC(request):
+    fecha_actual = datetime.datetime.now()
+    return render(request, 'cursoC.html', {'dameFecha':fecha_actual})
+
+def cursoCss(request):
+    fecha_actual = datetime.datetime.now()
+    return render(request, 'cursoCss.html', {'dameFecha':fecha_actual})
 
 def fired(request):
     return HttpResponse("Good bye world")
