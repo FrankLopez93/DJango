@@ -1,11 +1,25 @@
 #always import this library for views
-import datetime
-from importlib.resources import contents
 from django.http import HttpResponse
+import datetime
+from django.template import Template, Context
+
+class Persona(object):
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
 
 def gretting(request):
-    title = "<html><body><h1>Hello World :D</h1></body></html>"
-    return HttpResponse(title)
+    p1 = Persona('Francisco', 'Lopez')
+    #nombre = 'Javier'
+    #apellido = 'Lopez'
+    ahora = datetime.datetime.now()
+    doc_externo = open("C:/Users/Fc/Desktop/projectsDjango/firstProject/firstProject/Templates/myTemplate.html")
+    templt = Template(doc_externo.read())
+    doc_externo.close()
+    ctx = Context({'nombre_persona':p1.nombre, 'apellido':p1.apellido, 'actual':ahora})
+    documento = templt.render(ctx)
+
+    return HttpResponse(documento)
 
 def fired(request):
     return HttpResponse("Good bye world")
