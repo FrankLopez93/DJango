@@ -12,7 +12,28 @@
 </head>
 <body>
     <h1>Documento externo con Django</h1>
-    <p>Tu nombre es: {{nombre_persona}} y tu apellido es {{apellido}}</p>
+    {% comment %}
+        SINTAXIS PARA COMENTAR CODIGO SOBRE PLANTILLAS
+    {% endcomment %}
+    {% if nombre_persona == 'Francisco' %}
+        <p>Esto lo desarrollo {{nombre_persona}}</p>
+    {% else %}
+        <p>ACCESO DENEGADO!!!</p>
+    {% endif %}
+    <p>Tu nombre es: {{nombre_persona}} {{apellido}}</p>
     <p>la fecha de hoy es: {{actual.day}} / {{actual.month}} / {{actual.year}}</p>
+    <div>
+        <label><b>Temas:</b></label>
+        <ul>
+            {% if temas %}
+                {% for elTema in temas %}
+                    <li>{{elTema|first|lower}}</li><br>
+                {% endfor %}
+            {% else %}
+                <p>No hay elementos en la lista</p>
+            {% endif %}
+        </ul>
+    </div>
+    
 </body>
 </html>
