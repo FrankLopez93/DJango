@@ -1,0 +1,5 @@
+Start project -> django-admin startproject [nombre del proyecto]
+
+Ceate data base -> python [manage.py] migrate
+
+Run server -> python [manage.py] runserver
