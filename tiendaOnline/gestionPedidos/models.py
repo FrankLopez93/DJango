@@ -13,6 +13,9 @@ class Articulos(mod.Model):
     seccion = mod.CharField(max_length = 20)
     precio = mod.IntegerField()
 
+    def __str__(self):
+        return 'El nombre es %s la seccion es %s y el precio es %s' %(self.nombre, self.seccion, self.precio)
+
 class Pedidos(mod.Model):
     numero = mod.IntegerField()
     fecha = mod.DateField()
