@@ -11,3 +11,11 @@ Create app database -> python [manage.py] makemigrations
 Create sql code -> python [manage.py] sqlmigrate [app name] [migrate number]
 
 Ceate data base with tables-> python [manage.py] migrate
+
+Insert into tables from terminal -> Enter to shell with: python [manage.py] shell
+from [project name].models import [name table]
+[var name] = [table name]([atributte name]=[new register])
+[var name].save()
+For insert directly without use [save()] -> [name var]=[table name].objects.create([atributte names])
+For delete a register -> [var name]=[table name].objects.get([atributte id]) -> [var name].delete()
+For select a register -> [var name]=[table name].objects.all() -> [var name].query.__str__()
