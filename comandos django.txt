@@ -1,5 +1,13 @@
-Start project -> django-admin startproject [nombre del proyecto]
+Start project -> django-admin startproject [project name]
 
 Ceate data base -> python [manage.py] migrate
 
 Run server -> python [manage.py] runserver
+
+Create app -> python [manage.py] startapp [app name]
+
+Check your app -> python [manage.py] check [app name]
+
+Create app database -> python [manage.py] makemigrations
+
+Create sql code -> python [manage.py] sqlmigrate [app name] [migrate number]
