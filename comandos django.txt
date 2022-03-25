@@ -23,3 +23,12 @@ For select a register -> [var name]=[table name].objects.all() -> [var name].que
 For use '>' -> [table name].objects.filter([atributte],[integer atributte]__gte=100)
 For use '<' -> [table name].objects.filter([atributte],[integer atributte]__lte=100)
 order by -> [table name].objects.filter([atributte]__gte=100).order by([atributte])
+
+For create forms using API Forms -> Create file into your app called forms.py and create a class
+form django import forms
+class [class name](forms.Form)
+
+Enter in python shell and write:
+from [app name].forms import [class name]
+[var name] = [class name]
+print([var name])
